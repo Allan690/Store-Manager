@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/registration.css">
 <script type="text/javascript" src="js/main.js"></script>
-<title>Product-Category Form </title>
+<title>Assign Product Category </title>
 </head>
 <body>
   <nav class="navbar">
@@ -39,30 +39,21 @@
 
 <form action="#">
   <div class="container" id="main">
-    <h1>Add Product</h1>
-    <p>Please fill in this form to add a product</p>
+    <h1>Assign a product to a category</h1>
+    <p>Please fill in this form to categorize a Product</p>
     <hr>
 
     <label for="prodname"><b>Product Name</b></label>
     <input type="text" placeholder="Enter the product name" name="prodname" required>
 
-    <label for="prodcategory"><b>Product Category</b></label>
-    <input type="text" placeholder="Enter the product category" name="prodcategory" required>
+    <label for="price"><b>Product Category</b></label>
+    <input type="text" placeholder="Enter the product category" name="prodprice" required>
 
-    <label for="quantity"><b>Product Quantity</b></label>
-    <input type="text" placeholder="Enter the product quantity" name="prodquantity" required>
-
-    <label for="price"><b>Product Price</b></label>
-    <input type="text" placeholder="Enter the product price" name="prodprice" required>
-
-    <label for="description"><b>Product Description</b></label>
-    <input type="text" placeholder="Type a brief description of the product" name="proddescription" required>
-
-    <label for="image"><b>Product Image</b></label>
+    <label for="image"><b>Product Image(optional but recommended)</b></label>
   </br></br>
     <input type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
     <hr>
-    <button type="submit" class="registerbtn">Add Product</button>
+    <button type="submit" class="registerbtn">Save Product</button>
   </div>
 </form>
 
