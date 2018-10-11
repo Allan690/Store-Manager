@@ -1,19 +1,19 @@
 body{
     margin: 0;
     padding: 0;
-    background: url('../images/inventory4.jpg');
+    background: url("../images/mystoresbg.jpg");
     background-size: cover;
     background-position: center;
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .loginbox{
     width: 320px;
     height: 420px;
-    background: purple;
-    color: darkgrey;
+    background: #3b5998;
+    color: black;
     top: 50%;
-    left: 50%;
+    left: 70%;
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
@@ -54,8 +54,15 @@ h1{
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    color: white;
     font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+
+
+}
+::placeholder {
+    color: #E5E5E5;
+    opacity: 1;
 }
 .loginbox input[type="submit"]
 {
@@ -70,14 +77,14 @@ h1{
 .loginbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background: #ffc107;
+    background: #4CAF50;
     color: #000;
 }
 .loginbox a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: darkgrey;
+    color: black;
 }
 
 .loginbox a:hover
