@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>View All Products</title>
   <link rel="stylesheet" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/filterfiles.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -44,58 +43,46 @@
   <div id="main">
     <nav class="product-filter">
 
-  <h1>Furniture</h1>
+  <h1>Products</h1>
 
   <div class="sort">
 
     <div class="collection-sort">
       <label>Filter by:</label>
       <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('furniture')"> Furniture</button>
-  <button class="btn" onclick="filterSelection('beddings')"> Beddings</button>
-  <button class="btn" onclick="filterSelection('cosmetics')"> cosmetics</button>
+  <button class="btn active" onclick="filterProductsShow('all')"> Show all</button>
+  <button class="btn" onclick="filterProductsShow('furniture')"> Furniture</button>
+  <button class="btn" onclick="filterProductsShow('beddings')"> Beddings</button>
+  <button class="btn" onclick="filterProductsShow('cosmetics')"> cosmetics</button>
 </div>
     </div>
-
-    <div class="collection-sort">
-    </div>
-
   </div>
-
 </nav>
     <section class="product">
-<div class="column furniture">
-    <div class="card">
+    <div class="card furniture">
   <img src="images/furniture/chair1.jpg" alt="Chair" style="width:100%">
   <h1>Dining Room Chair</h1>
   <p class="price">KSHS 1299</p>
   <p>Charcoal linen paige Round-back dining chairs</p>
   <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column furniture">
-<div class="card">
+<div class="card furniture">
 <img src="images/furniture/cupboard1.jpg" alt="Chair" style="width:100%;height=100px;">
 <h1>Door Cupboard</h1>
 <p class="price">KSHS 8999</p>
 <p>Argos Home Walton Tall 2 Door Cupboard - Oak Effect</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column furniture">
-<div class="card">
+<div class="card furniture">
 <img src="images/furniture/bed1.jpeg" alt="Cassiope Bed" style="width:100%;">
 <h1>Cassiope Bed</h1>
 <p class="price">KSHS 1299</p>
 <p>Cassiope beds -- Upholstered Storage Bed</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column furniture">
 <div class="card">
 <img src="images/furniture/couch1.jpg" alt="Couch" style="width:100%">
 <h1>Couch</h1>
@@ -103,9 +90,7 @@
 <p>Argos Home Antonio Compact 2 Seater Sofa - Black at Argos</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column furniture">
 <div class="card">
 <img src="images/furniture/table1.jpg" alt="Table" style="width:100%">
 <h1>Dining Room Table</h1>
@@ -113,9 +98,8 @@
 <p>Normal kitchen/dining room table from Modway Kitchen</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column furniture">
+
 <div class="card" id="column furniture">
 <img src="images/furniture/bed1.jpeg" alt="Bed" style="width:100%">
 <h1>King Size Bed</h1>
@@ -123,68 +107,114 @@
 <p>Spacewood Mayflower Engineered Wood King Box Bed</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column beddings">
-<div class="card">
+<div class="card beddings">
 <img src="images/beddings/mattress1.jpg" alt="Mattress" style="width:100%">
 <h1>Seta Mattress</h1>
 <p class="price">KSHS 1899</p>
 <p>Serta Sertapedic Widefield Twin Mattress .349.99. 11.75H.</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column beddings">
-<div class="card">
+<div class="card beddings">
 <img src="images/beddings/duvet1.jpg" alt="Duvet" style="width:100%">
 <h1>Comfy Duvets</h1>
 <p class="price">KSHS 1599</p>
 <p>Comfortable duvets for all weather seasons</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column beddings">
-<div class="card">
+<div class="card cosmetics">
 <img src="images/beddings/pillow.jpg" alt="Pillow" style="width:100%">
 <h1>Cassiope Pillows</h1>
 <p class="price">KSHS 899</p>
 <p>Comfy pillows at cheap prices Cassiope quality</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column cosmetics">
-<div class="card">
+
+
+<div class="card cosmetics">
 <img src="images/cosmetics/jelly1.jpg" alt="Valon Jelly" style="width:100%">
 <h1>Valon Petroleum Jelly</h1>
 <p class="price">KSHS 49</p>
 <p>Perfumed white petroleum jelly from Valon Skin Care</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column cosmetics">
-<div class="card">
+
+<div class="card cosmetics">
 <img src="images/cosmetics/mascara.jpg" alt="Mascara" style="width:100%">
 <h1>Mybelline Mascara</h1>
 <p class="price">KSHS 699</p>
 <p>Maybelline Lash Sensational Mascara 9.5ml</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
 
-<div class="column cosmetics">
-<div class="card">
+
+<div class="card cosmetics">
 <img src="images/cosmetics/pencil1.jpg" alt="Eye Pencil" style="width:100%">
 <h1>Facial Pencil</h1>
 <p class="price">KSHS 799</p>
 <p>Cassiope quality eyebrow pencils</p>
 <p><button>Add to Cart</button></p>
 </div>
-</div>
+
 </section>
 </div>
+<style>
+.show{
+  display: block;
+}
+</style>
+<script>
+filterProductsShow("all") // Execute the function and show all columns
+function filterProductsShow(c) {
+  var x, i;
+  x = document.getElementsByClassName("card");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    showRemove(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) showAdd(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function showAdd(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function showRemove(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 </body>
 </html>
