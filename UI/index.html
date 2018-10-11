@@ -20,33 +20,27 @@
         </svg>
       </a>
     </span>
-
     <ul class="navbar-nav">
-
-      <li><a href="index.html">All Products</a></li>
-      <li><a href="#">Sales Records</a></li>
-      <li><a href="#">Attendants</a></li>
-      <li><a href="#">Available Products</a></li>
-      <li><a href="#">Settings</a></li>
+          <li><a href="index.html">All Products</a></li>
+          <li><a href="allsalerecords.html">Sales Records</a></li>
+          <li><a href="attendantprofile.html">View Profile</a></li>
+          <li><a href="crudproduct.html">Change Products</a></li>
+          <li><a href="login.html">Logout</a></li>
     </ul>
   </nav>
 
   <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-    <a href="#">Add Product</a><br>
+    <a href="addprodcategory.html">Add Product</a><br>
     <a href="register.html">Add Attendant</a><br>
-    <a href="#">Make Admin</a><br>
-    <a href="#">View Sales</a><br>
-    <a href="#">Logout</a>
+    <a href="attendantsalesrecords.html">View Sales</a><br>
+    <a href="login.html">Logout</a>
   </div>
 
   <div id="main">
     <nav class="product-filter">
-
   <h1>Products</h1>
-
   <div class="sort">
-
     <div class="collection-sort">
       <label>Filter by:</label>
       <div id="myBtnContainer">
@@ -64,7 +58,7 @@
   <h1>Dining Room Chair</h1>
   <p class="price">KSHS 1299</p>
   <p>Charcoal linen paige Round-back dining chairs</p>
-  <p><button>Add to Cart</button></p>
+  <p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card furniture">
@@ -72,7 +66,7 @@
 <h1>Door Cupboard</h1>
 <p class="price">KSHS 8999</p>
 <p>Argos Home Walton Tall 2 Door Cupboard - Oak Effect</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card furniture">
@@ -80,7 +74,7 @@
 <h1>Cassiope Bed</h1>
 <p class="price">KSHS 1299</p>
 <p>Cassiope beds -- Upholstered Storage Bed</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card">
@@ -88,7 +82,7 @@
 <h1>Couch</h1>
 <p class="price">KSHS 1299</p>
 <p>Argos Home Antonio Compact 2 Seater Sofa - Black at Argos</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card">
@@ -96,7 +90,7 @@
 <h1>Dining Room Table</h1>
 <p class="price">KSHS 1299</p>
 <p>Normal kitchen/dining room table from Modway Kitchen</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 
@@ -105,7 +99,7 @@
 <h1>King Size Bed</h1>
 <p class="price">KSHS 20999</p>
 <p>Spacewood Mayflower Engineered Wood King Box Bed</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card beddings">
@@ -113,7 +107,7 @@
 <h1>Seta Mattress</h1>
 <p class="price">KSHS 1899</p>
 <p>Serta Sertapedic Widefield Twin Mattress .349.99. 11.75H.</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card beddings">
@@ -121,7 +115,7 @@
 <h1>Comfy Duvets</h1>
 <p class="price">KSHS 1599</p>
 <p>Comfortable duvets for all weather seasons</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 <div class="card cosmetics">
@@ -129,7 +123,7 @@
 <h1>Cassiope Pillows</h1>
 <p class="price">KSHS 899</p>
 <p>Comfy pillows at cheap prices Cassiope quality</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 
@@ -139,7 +133,7 @@
 <h1>Valon Petroleum Jelly</h1>
 <p class="price">KSHS 49</p>
 <p>Perfumed white petroleum jelly from Valon Skin Care</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 
@@ -148,7 +142,7 @@
 <h1>Mybelline Mascara</h1>
 <p class="price">KSHS 699</p>
 <p>Maybelline Lash Sensational Mascara 9.5ml</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 
@@ -157,64 +151,10 @@
 <h1>Facial Pencil</h1>
 <p class="price">KSHS 799</p>
 <p>Cassiope quality eyebrow pencils</p>
-<p><button>Add to Cart</button></p>
+<p><button onclick="">Add to Cart</button></p>
 </div>
 
 </section>
 </div>
-<style>
-.show{
-  display: block;
-}
-</style>
-<script>
-filterProductsShow("all") // Execute the function and show all columns
-function filterProductsShow(c) {
-  var x, i;
-  x = document.getElementsByClassName("card");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    showRemove(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) showAdd(x[i], "show");
-  }
-}
-
-// Show filtered elements
-function showAdd(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-
-// Hide elements that are not selected
-function showRemove(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
 </body>
 </html>
