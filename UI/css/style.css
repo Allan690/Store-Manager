@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: #abb2ba;
+    background: url("../images/mystoresbg.jpg");
     background-size: cover;
     background-position: center;
     font-family: 'Nunito', sans-serif;
@@ -13,7 +13,7 @@ body{
     background: #3b5998;
     color: black;
     top: 50%;
-    left: 50%;
+    left: 70%;
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
