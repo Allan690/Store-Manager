@@ -1,5 +1,9 @@
+.show {
+    display: block;
+}
+
 body{
-  font-family:"Arial", Serif;
+  font-family:"Nunito", Serif;
   background-color:#f4f4f4;
   overflow-x:hidden;
 }
@@ -31,7 +35,7 @@ body{
 }
 
 .side-nav{
-  height:100%;
+  height:95%;
   width:0;
   position:fixed;
   z-index:1;
@@ -81,14 +85,10 @@ body{
   display: flex;
    margin: 10px -16px;
 }
-/* Add padding BETWEEN each column */
+
 .sort,
 .sort > .card {
     padding: 12px;
-}
-/* The "show" class is added to the filtered elements */
-.show {
-    display: block;
 }
 
 .collection-sort {
@@ -100,17 +100,18 @@ body{
   flex-wrap: wrap;
 }
 .column{
-  display:all;
+  display: none;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
+  max-width: 360px;
+  margin: 25px;
   text-align: center;
-  font-family: arial;
+  font-family:'Nunito';
   flex-grow: 1;
   padding: 2%;
-flex-basis: 16%;
+  flex-basis: 16%;
+  display: all;
 
 }
 .att-profile{
@@ -121,6 +122,15 @@ flex-basis: 16%;
   font-family: 'Nunito';
   padding: 2%;
 flex-basis: 16%
+}
+.prod-profile{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 340px;
+  margin: 35px;
+  text-align: center;
+  font-family: 'Nunito';
+  padding: 15%;
+flex-basis: 25%
 }
 .att-profile button{
     border: none;
@@ -134,12 +144,29 @@ flex-basis: 16%
     font-size: 18px;
   }
 }
-  display: flex; /* so child elements can use flexbox stuff too! */
+  display: flex;
 }
 .price {
   color: grey;
   font-size: 22px;
   margin-top: auto;
+}
+.row,
+.row > .prod-profile{
+    padding: 8px;
+}
+.prod-profile {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide columns by default */
+}
+* {
+    box-sizing: border-box;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .card button {
@@ -147,11 +174,12 @@ flex-basis: 16%
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: #3b5998;
   text-align: center;
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+
 }
 
 .card button:hover {
@@ -171,7 +199,7 @@ flex-basis: 16%
 }
 
 .btn.active {
-  background-color: #666;
+  background-color: #3b5998;
   color: white;
 }
 .btn-edit {
@@ -204,6 +232,9 @@ flex-basis: 16%
     display: inline-block;
     font-size: 16px;
 }
+.row{
+  overflow: hidden;
+}
 @media(max-width:568px){
   .navbar-nav{display:none}
 }
@@ -213,7 +244,7 @@ flex-basis: 16%
 }
 @media (max-width: 920px) {
   .card {
-    flex: 1 21%;
+    flex: 1 25%;
   }
 }
 @media (max-width: 600px) {
