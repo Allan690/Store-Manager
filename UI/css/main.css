@@ -41,7 +41,7 @@ body{
   z-index:1;
   top:0;
   left:0;
-  background-color:#111;
+  background-color:#3b5998;
   opacity:0.9;
   overflow-x:hidden;
   padding-top:60px;
@@ -114,6 +114,13 @@ body{
   display: all;
 
 }
+#bed, #chair, #cupboard, #duvet, #mattress, #pillow, #jelly, #pencil{
+  margin: auto;
+  align-self: center;
+  width: 100%;
+  margin-left: 35%;
+  margin-right: 50%;
+}
 .att-profile{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 340px;
@@ -158,7 +165,7 @@ flex-basis: 25%
 .prod-profile {
     float: left;
     width: 33.33%;
-    display: none; /* Hide columns by default */
+    display: all;
 }
 * {
     box-sizing: border-box;
@@ -182,6 +189,7 @@ flex-basis: 25%
 
 }
 
+
 .card button:hover {
   opacity: 0.7;
 }
@@ -203,7 +211,7 @@ flex-basis: 25%
   color: white;
 }
 .btn-edit {
-    background-color: #3B5998; /* Green */
+    background-color: #3B5998;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -213,7 +221,7 @@ flex-basis: 25%
     font-size: 16px;
 }
 .btn-add {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -223,7 +231,7 @@ flex-basis: 25%
     font-size: 16px;
 }
 .btn-delete {
-    background-color: #99593C ; /* Green */
+    background-color: #99593C ;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -235,7 +243,19 @@ flex-basis: 25%
 .row{
   overflow: hidden;
 }
+.btnclass {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #3b5998;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  font-family: 'Nunito', serif;
 
+}
 .collection-sort input[type=text] {
     float: right;
     padding: 6px;
