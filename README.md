@@ -25,7 +25,7 @@ The store owner can be referred to as the admin of the application
 You can choose either of 2 options:
 1. Clone the repository by doing `git clone https://github.com/Allan690/Store-Manager.git` with the use of a terminal
 
-2. Visit the hosting link: https://allan690.github.io/Store-Manager/login.html
+2. Visit the hosting link: https://allan690.github.io/Store-Manager/UI/login.html
 
 ## Built With
 
