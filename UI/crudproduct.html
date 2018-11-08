@@ -1,106 +1,68 @@
 <!Doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Records</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="js/main.js"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <span class="open-slide">
-        <a href="#" onclick="openSlideMenu()">
-          <svg width="30" height="30">
-              <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-              <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-              <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
-          </svg>
-        </a>
-      </span>
-      <ul class="navbar-nav">
-            <li><a href="index.html">All Products</a></li>
-            <li><a href="allsalerecords.html">Sales Records</a></li>
-            <li><a href="attendantprofile.html">View Profile</a></li>
-            <li><a href="crudproduct.html">Change Products</a></li>
-            <li><a href="individualprodetails.html">Product Information</a></li>
-            <li><a href="login.html">Logout</a></li>
-      </ul>
-    </nav>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/registration.css">
+<link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/main.js"></script>
+<title>Assign Product Category </title>
+</head>
+<body>
+  <nav class="navbar">
+    <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
+    <ul class="navbar-nav">
+      <li><a href="index.html">All Products</a></li>
+      <li><a href="allsalerecords.html">Sales Records</a></li>
+      <li><a href="attendantprofile.html">View Profile</a></li>
+      <li><a href="crudproduct.html">Change Products</a></li>
+      <li><a href="individualprodetails.html">Product Information</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
 
-  <div id="side-menu" class="side-nav">
-      <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-      <a href="addprodcategory.html">Add Product</a><br>
-      <a href="register.html">Add Attendant</a><br>
-      <a href="attendantsalesrecords.html">View Sales</a><br>
-      <a href="login.html">Logout</a>
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="addprodcategory.html">Add Product</a><br>
+    <a href="register.html">Add Attendant</a><br>
+    <a href="attendantsalesrecords.html">View Sales</a><br>
+    <a href="login.html">Logout</a>
+</div>
+<form>
+  <div class="container" id="main">
+    <h1>Create a product</h1>
+    <p>Please fill in this form to create a Product</p>
+    <hr>
+
+    <label for="prodname"><b>Product Name</b></label>
+    <input type="text" id="prod_name" placeholder="Enter the product name" name="prodname" required>
+
+    <label for="prodquantity" ><b>Product Quantity</b></label>
+    <input type="text" id="prod_quantity" placeholder="Enter the product quantity" name="prodqty" required>
+
+    <label for="prodname" ><b>Minimum allowed quantity</b></label>
+    <input type="text" id="minimum_allowed" placeholder="Enter the minimum allowed quantity " name="prodminqty" required>
+
+    <label for="prodcategory" ><b>Product Category</b></label>
+    <input type="text" id="prod_category" placeholder="Enter the product category" name="prodcategory" required>
+
+    <label for="price" ><b>Product Price</b></label>
+    <input type="text" id="prod_price" placeholder="Enter the product price" name="prodprice" required>
+
+    <label for="description" ><b>Product description</b></label>
+    <input type="text" id="prod_description" placeholder="Enter the product description" name="prod_description" required>
+    <hr>
+    <button type="submit" class="registerbtn" id="addprod">Save Product</button>
   </div>
-    <table>
-      <caption>Product Records</caption>
-      <thead>
-        <tr>
-          <th scope="col">Product ID</th>
-          <th scope="col">Product Name</th>
-          <th scope="col">Category ID</th>
-          <th scope="col">Category Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tfoot>
-        <tr>
-          <td colspan="6">You can create, edit and delete a product here.</td>
-        </tr>
-      </tfoot>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Dining Room Chair</td>
-          <td>1</td>
-          <td>Furniture</td>
-          <td>Kshs 1299</td>
-          <td>Charcoal linen paige Round-back dining chairs</td>
-          <td><button class="btn-add" onclick="">Add</button></td>
-          <td><button class="btn-edit" onclick="">Edit</button></td>
-          <td><button class="btn-delete" onclick="">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Couch</td>
-          <td>1</td>
-          <td>Furniture</td>
-          <td>Kshs 1299</td>
-          <td>Argos Home Antonio Compact 2 Seater Sofa - Black at Argos</td>
-          <td><button class="btn-add" onclick="">Add</button></td>
-          <td><button class="btn-edit" onclick="">Edit</button></td>
-          <td><button class="btn-delete" onclick="">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Seta Mattress</td>
-          <td>2</td>
-          <td>Beddings</td>
-          <td>Kshs 1899</td>
-          <td>Serta Sertapedic Widefield Twin Mattress .349.99. 11.75H.</td>
-          <td><button class="btn-add" onclick="">Add</button></td>
-          <td><button class="btn-edit" onclick="">Edit</button></td>
-          <td><button class="btn-delete" onclick="">Delete</button></td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Valon Petroleum Jelly</td>
-          <td>3</td>
-          <td>Kshs 49</td>
-          <td>Cosmetics</td>
-          <td>Perfumed white petroleum jelly from Valon Skin Care</td>
-          <td><button class="btn-add" onclick="">Add</button></td>
-          <td><button class="btn-edit" onclick="">Edit</button></td>
-          <td><button class="btn-delete" onclick="">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </body>
+</form>
+<script src="js/add_product.js"></script>
+</body>
 </html>

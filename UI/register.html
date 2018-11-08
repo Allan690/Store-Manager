@@ -35,24 +35,24 @@
       <a href="attendantsalesrecords.html">View Sales</a><br>
       <a href="login.html">Logout</a>
   </div>
-<form action="#">
+<form>
   <div class="container" id="main">
     <h1>Register</h1>
     <p>Please fill in this form to create attendant user account.</p>
     <hr>
 
    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" onchange='check_password();' id="psw-repeat" required>
     <hr>
-    <button type="submit" class="registerbtn">Create Account</button>
+    <button type="submit" class="registerbtn" id="btnsubmit" disabled >Create Account</button>
   </div>
 </form>
-
+<script type="text/javascript" src="js/register.js"></script>
 </body>
 </html>
