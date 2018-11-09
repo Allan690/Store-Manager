@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/registration.css">
 <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/main.js"></script>
-<title>Assign Product Category </title>
+<title>Update Product Details</title>
 </head>
 <body>
   <nav class="navbar">
@@ -23,7 +23,7 @@
       <li><a href="index.html">All Products</a></li>
       <li><a href="allsalerecords.html">Sales Records</a></li>
       <li><a href="attendantprofile.html">View Profile</a></li>
-      <li><a href="crudproduct.html">Change Products</a></li>
+      <li><a href="crudproduct.html">Create Product</a></li>
       <li><a href="individualprodetails.html">Product Information</a></li>
       <li><a href="login.html">Logout</a></li>
     </ul>
@@ -31,29 +31,40 @@
 
 <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-    <a href="addprodcategory.html">Add Product</a><br>
+    <a href="addprodcategory.html">Update Product</a><br>
     <a href="register.html">Add Attendant</a><br>
     <a href="attendantsalesrecords.html">View Sales</a><br>
     <a href="login.html">Logout</a>
 </div>
 <form action="#">
   <div class="container" id="main">
-    <h1>Assign a product to a category</h1>
-    <p>Please fill in this form to categorize a Product</p>
+    <h1>Update Product details</h1>
+    <p>Fill this form to update the product details</p>
     <hr>
-
+	<label for="prodid"><b>Product ID</b></label>
+    <input type="text" id="prod_id" placeholder="Product ID of the product you want to change" name="prodid" required>
+	
     <label for="prodname"><b>Product Name</b></label>
-    <input type="text" placeholder="Enter the product name" name="prodname" required>
+    <input type="text" id="prod_name" placeholder="Enter the new product name" name="prodname" required>
 
-    <label for="price"><b>Product Category</b></label>
-    <input type="text" placeholder="Enter the product category" name="prodprice" required>
+    <label for="prodquantity" ><b>Product Quantity</b></label>
+    <input type="text" id="prod_quantity" placeholder="Enter the new product quantity" name="prodqty" required>
 
-    <label for="image"><b>Product Image(optional but recommended)</b></label>
-  </br></br>
-    <input type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
+    <label for="prodmin" ><b>Minimum allowed quantity</b></label>
+    <input type="text" id="minimum_allowed" placeholder="Enter the new minimum allowed quantity " name="prodminqty" required>
+
+    <label for="prodcategory" ><b>Product Category</b></label>
+    <input type="text" id="prod_category" placeholder="Enter the new product category" name="prodcategory" required>
+
+    <label for="price" ><b>Product Price</b></label>
+    <input type="number" id="prod_price" placeholder="Enter the new product price" name="prodprice" required>
+
+    <label for="description" ><b>Product description</b></label>
+    <input type="text" id="prod_description" placeholder="Enter the new product description" name="prod_description" required>
     <hr>
-    <button type="submit" class="registerbtn">Save Product</button>
+    <button type="submit" class="registerbtn" id="updatebtn" >Update Product</button>
   </div>
+  <script src="js/updateproduct.js"></script>
 </form>
 
 </body>
