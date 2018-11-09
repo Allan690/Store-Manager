@@ -31,8 +31,12 @@ mode: "cors",
 	<div class="card">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
+	<p> Product ID: ${product.prod_id} </p>
+	<hr>
     <p class="price"> Price: ${product.prod_price}</p>
+	<hr>
     <p>Description: ${product.prod_description} </p>
+	<hr>
     <button onclick="location.href='attendantsalesrecords.html'">Add to Cart</button>
     </div>
 	`
