@@ -1,9 +1,3 @@
-//var deletebtn = document.getElementById('btndelete')
-//if(deletebtn){
-//	deletebtn.addEventListener('click', deleteProductByID)
-//}
-
-//callback function
 function deleteProductByID(){	
 const token = localStorage.getItem('token')
 const prodid = localStorage.getItem('product_id')
