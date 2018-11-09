@@ -30,9 +30,11 @@ mode: "cors",
 	<div class="prod-profile">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
+	<p class="prod_id" id="prod_id">Product ID: ${product.prod_id} </p>
+	<p>Quantity: ${product.prod_quantity} </p>
     <p class="price"> Price: ${product.prod_price}</p>
     <p>Description: ${product.prod_description} </p>
-    </div>
+    </div>    
 	`
 	;
 	});
@@ -76,7 +78,7 @@ mode: "cors",
 	<div class="prod-profile">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${data["Product Profile"].prod_name}</h1><hr>
-	<p> Product ID: ${data["Product Profile"].prod_id}</p> <hr>
+	<p id="prod_id"> Product ID: ${data["Product Profile"].prod_id}</p> <hr>
     <p class="price">Price: ${data["Product Profile"].prod_price}</p><hr>
     <p class="description">Description: ${data["Product Profile"].prod_description.substring(0,30)}</p>
 	<hr>
@@ -86,9 +88,12 @@ mode: "cors",
 	<hr>
 	<p>Category: ${data["Product Profile"].prod_category}</p>
 	<hr>
+	<button id="btndelete" onclick="deleteProductByID();">Delete Product</button>
     </div>
 	`
 	;
+	product_id = data["Product Profile"].prod_id;
+	localStorage.setItem('product_id', product_id);
 	document.getElementById('product').innerHTML = output;
 })
 

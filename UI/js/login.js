@@ -15,7 +15,7 @@ function loginFunction(e){
 	password:password,
 	};
 
-	//  post the data to via fetch
+	//  post the data to db via fetch
 	fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/login",{
 	headers: {
 		'Content-Type': 'application/json',
