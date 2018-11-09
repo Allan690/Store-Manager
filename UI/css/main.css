@@ -139,6 +139,18 @@ flex-basis: 16%
   padding: 15%;
 flex-basis: 25%
 }
+
+.prod-profile button{
+	border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #3b5998;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 .att-profile button{
     border: none;
     outline: 0;
