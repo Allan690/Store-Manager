@@ -2,7 +2,6 @@ let sect = document.getElementById('product')
 
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
-console.log(access_token)
 if (token === null){
   alert("Please login to view the products page!")
 }
@@ -20,26 +19,26 @@ mode: "cors",
 })
 .then(function(response)
 {
-	console.log(response)
 	return response.json()
 	
 	})
 .then((data) => {
-	console.log(data)
 	
 	let output = '<div></div>'
 	data["All products"].forEach(function(product){
+		product_id = product.prod_id;
 	output+=`
 	<div class="card">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
-    <p class="price">${product.prod_price}</p>
-    <p>${product.prod_description}</p>
+    <p class="price"> Price: ${product.prod_price}</p>
+    <p>Description: ${product.prod_description} </p>
     <button onclick="location.href='attendantsalesrecords.html'">Add to Cart</button>
     </div>
 	`
 	;
 	});
 	document.getElementById('product').innerHTML = output;
+	
 })
 
