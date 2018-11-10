@@ -1,7 +1,6 @@
 function deleteProductByID(){	
 const token = localStorage.getItem('token')
 const prodid = localStorage.getItem('product_id')
-console.log(prodid)
 const access_token = "Bearer " + token
 if (token === null){
   alert("Please login as admin to delete a product!")
