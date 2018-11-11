@@ -22,20 +22,40 @@ mode: "cors",
 	})
 .then((data) => {
 	let output = ''
-	data["Sale records"].forEach(function(sale){
+	data["All Sales"].forEach(function(sale){
 	output+=`
-	    <tr>
+	<table>
+     <caption>User ID: ${sale.user_id} Sales Records</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product ID</th>
+		  <th scope="col">Sales ID</th>
+          <th scope="col">Sold Quantity</th>
+          <th scope="col">Product Price</th>
+		  <th scope="col">User ID</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="5">attendantID: ${sale.user_id}</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
           <th scope="row">${sale.product_id}</th>
           <td>${sale.sales_id}</td>
           <td>${sale.sales_quantity}</td>
           <td>${sale.prod_price}</td>
           <td>${sale.user_id}</td>
-        </tr>
+        </tr>        
+          
+      </tbody>
+</table>
 	`
 	;
 	
 	});
-	document.getElementById('tablebody').innerHTML = output;
+	document.getElementById('body').innerHTML = output;
 	
 })
 
