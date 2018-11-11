@@ -25,13 +25,17 @@ mode: "cors",
 	data["Users"].forEach(function(user){
 	output+=
 	`
+<form action="makeadmin.html">
 <div class="card">
 <img src="images/avatar-homme.png" alt="attendant image" style="width:100%">
 <hr>
+<input type="hidden" name="attendant_email" id="attendant_email" value=${user.email}>
 <p>Attendant ID: ${user.user_id} </p><hr>
 <p>Attendant Email: ${user.email} </p><hr>
-<p><button>Make Admin</button></p>
+<p> Role: ${user.role} </p><hr>
+<p><button type="submit">Make Admin</button></p>
 </div>
+</form>
 
 	`
 	;
