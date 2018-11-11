@@ -1,5 +1,4 @@
 let sect = document.getElementById('product')
-
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){

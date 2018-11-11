@@ -1,5 +1,5 @@
 let sect = document.getElementById('product')
-
+var prod_id;
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
@@ -24,23 +24,28 @@ mode: "cors",
 	})
 .then((data) => {
 	
-	let output = '<div></div>'
+	let output = ''
 	data["All products"].forEach(function(product){
-		product_id = product.prod_id;
 	output+=`
+	<form action="createsale.html">
 	<div class="card">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
-	<p> Product ID: ${product.prod_id} </p>
+	<p id="productid"> Product ID: ${product.prod_id} </p>
 	<hr>
+	<input type="hidden" name="product_id" id="product_id" value=${product.prod_id}>
     <p class="price"> Price: ${product.prod_price}</p>
 	<hr>
-    <p>Description: ${product.prod_description} </p>
+	<p class="quantity"> Quantity: ${product.prod_quantity}</p>
 	<hr>
-    <button onclick="location.href='attendantsalesrecords.html'">Add to Cart</button>
-    </div>
+    <p class="description">Description: ${product.prod_description} </p>
+	<hr>
+    <button type="submit" id="btnSale">Add to Cart</button>
+    </div>	
+	</form>
 	`
 	;
+	
 	});
 	document.getElementById('product').innerHTML = output;
 	
