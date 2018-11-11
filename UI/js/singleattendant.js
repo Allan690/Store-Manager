@@ -27,7 +27,6 @@ mode: "cors",
 <hr>
 <p>Attendant ID: ${data["User Profile"].user_id} </p><hr>
 <p>Attendant Email: ${data["User Profile"].email} </p><hr>
-<p><button>Make Admin</button></p>
 </div>
 
 	`
