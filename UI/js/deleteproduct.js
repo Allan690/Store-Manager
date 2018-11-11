@@ -3,7 +3,12 @@ const token = localStorage.getItem('token')
 const prodid = localStorage.getItem('product_id')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login as admin to delete a product!")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login as admin to delete a product!
+</div>`
 }
 // ask the user whether they want to delete the product
 if(confirm("Are you sure you want to delete this product?"))
@@ -27,13 +32,22 @@ mode: "cors",
 .then(function(response){
 		if (response.Message === "Product deleted successfully!"){
 			// redirect to individualprod page
-      alert(response.Message)
+      let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_success">
+     <i class="fa fa-check"></i>
+     ${response.Message}
+</div>`
 			window.location.href = './individualprodetails.html'
 		}
 		else{
-      alert(response.Message)
+      let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    ${response.Message}
+</div>`
 		}
-
 	})
 
 }

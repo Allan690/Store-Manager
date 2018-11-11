@@ -19,7 +19,11 @@ const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 
 if (token === null){
-  alert("Please login with your admin credentials")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =`<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login with your admin credentials
+</div>`
 	window.location.href = "./login.html"
 }
 
@@ -38,11 +42,19 @@ fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/signup",{
 	.then(function(response){
 		if (response.Message === "Attendant user registered successfully"){
 			// redirect to index page
-      alert(response.Message)
+         let notify = document.getElementById("notify")
+         notify.innerHTML =`<div class="isa_success">
+                        <i class="fa fa-check"></i>
+						${response.Message}
+                          </div>`
 			window.location.href = './index.html'
 		}
 		else{
-      alert(response.Message)
+      let notify = document.getElementById("notify")
+         notify.innerHTML =`<div class="isa_error">
+                       <i class="fa fa-times-circle"></i>
+                       ${response.Message}
+                        </div>`
 		}
 
 	})

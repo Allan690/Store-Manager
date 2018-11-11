@@ -5,7 +5,13 @@ sale_id = parseInt(searchbox.value, 10)
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the sales page!")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login to view this page
+</div>`
+}
 }
 
 //Getting our sale from the REST API

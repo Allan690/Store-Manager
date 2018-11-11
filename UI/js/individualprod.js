@@ -2,8 +2,14 @@ let sect = document.getElementById('product')
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the products page!")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login to view products page
+</div>`
 }
+
 
 //Getting our products from the REST API
 fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/products",{
@@ -52,7 +58,11 @@ function getProductByID(){
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the products page!")
+  let notify = document.getElementById("notify")
+	notify.innerHTML =`<div class="isa_error">
+   <i class="fa fa-times-circle"></i>
+   Please login to view the products page!
+</div>`
 }
 fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/products/${searchbox.value}`,{
 headers: {
@@ -91,6 +101,12 @@ mode: "cors",
     </div>
 	`
 	;
+	let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_success">
+    <i class="fa fa-check"></i>
+    Product retrieved successfully!
+</div>`
 	product_id = data["Product Profile"].prod_id;
 	localStorage.setItem('product_id', product_id);
 	document.getElementById('product').innerHTML = output;

@@ -28,7 +28,11 @@ const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 
 if (token === null){
-  alert("Please login with your admin credentials")
+	let notify = document.getElementById("notify")
+	notify.innerHTML =`<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login with your admin credentials to proceed.
+</div>`
 	window.location.href = "./login.html"
 }
 
@@ -47,11 +51,21 @@ fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/products/${prodid}`
 	.then(function(response){
 		if (response.Message === "Product successfully updated"){
 			// redirect to index page
-      alert(response.Message)
+      let notify = document.getElementById("notify")
+	notify.innerHTML =
+	`<div class="isa_success">
+     <i class="fa fa-check"></i>
+     Product updated successfully!
+</div>`
 			window.location.href = './index.html'
 		}
 		else{
-      alert(response.Message)
+      let notify = document.getElementById("notify")
+	notify.innerHTML =`
+	<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    ${response.Message}
+</div>`
 		}
 
 	})

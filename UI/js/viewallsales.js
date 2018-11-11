@@ -1,7 +1,11 @@
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the sales page!")
+let notify = document.getElementById("notify")
+notify.innerHTML =`<div class="isa_success">
+                    <i class="fa fa-check"></i>
+					Please login to view all sales
+					</div>`
 }
 
 //Getting our sales from the REST API
@@ -33,7 +37,12 @@ mode: "cors",
         </tr>
 	`
 	;
-	
+	let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_success">
+    <i class="fa fa-check"></i>
+    Individual sale records retrieved successfully!
+</div>`
 	});
 	document.getElementById('tablebody').innerHTML = output;
 	

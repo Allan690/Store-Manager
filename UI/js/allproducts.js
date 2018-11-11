@@ -1,9 +1,12 @@
 let sect = document.getElementById('product')
-var prod_id;
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the products page!")
+  let notify = document.getElementById("notify")
+	notify.innerHTML =`<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login to view the products page.
+</div>`
 }
 
 //Getting our products from the REST API
@@ -48,6 +51,11 @@ mode: "cors",
 	
 	});
 	document.getElementById('product').innerHTML = output;
+	let notify = document.getElementById("notify")
+	notify.innerHTML = `<div class="isa_success">
+     <i class="fa fa-check"></i>
+     Products retrieved successfully!
+</div>`
 	
 })
 

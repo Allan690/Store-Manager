@@ -31,11 +31,19 @@ function loginFunction(e){
 		localStorage.setItem('token', response.token)
 		if (response.Message === "User logged in successfully!"){
 			// redirect to index page
-			alert("User logged in successfully!")
+			let notify = document.getElementById("notify")
+			notify.innerHTML =`<div class="isa_success">
+                               <i class="fa fa-check"></i>
+     You were successfully logged in!
+</div>`
 			window.location.href = './index.html'
 		}
 		else{
-			alert(response.Message)
+			let notify = document.getElementById("notify")
+			notify.innerHTML =`<div class="isa_error">
+   <i class="fa fa-times-circle"></i>
+   ${response.Message}
+</div>`
 
 		}
 
