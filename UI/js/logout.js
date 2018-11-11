@@ -1,4 +1,3 @@
 function logout(){
 	localStorage.clear()
-
 }
