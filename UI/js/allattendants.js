@@ -1,8 +1,14 @@
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the sales page!")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login as admin to view all attendants!
+</div>`
 }
+
 
 //Getting attendant details from the rest api
 fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/users",{
@@ -39,7 +45,12 @@ mode: "cors",
 
 	`
 	;
-	
+	let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_success">
+    <i class="fa fa-check"></i>
+    Users retrieved successfully!
+</div>`
 	});
 	document.getElementById('attdetails').innerHTML = output;
 	

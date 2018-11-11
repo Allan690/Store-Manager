@@ -1,5 +1,12 @@
+const token = localStorage.getItem('token')
+const access_token = "Bearer " + token
 if (token === null){
-  alert("Please login to view the sales page!")
+  let notify = document.getElementById("notify")
+  notify.innerHTML =
+  `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login to view this page.
+</div>`
 }
 
 //Getting attendant details from the rest api
@@ -31,6 +38,12 @@ mode: "cors",
 
 	`
 	;
+	let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_success">
+    <i class="fa fa-check"></i>
+  Attendant details displayed successfully!
+</div>`
 	
 	document.getElementById('attdetails').innerHTML = output;
 	

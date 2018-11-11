@@ -131,6 +131,36 @@ body{
   margin-left: 35%;
   margin-right: 50%;
 }
+.isa_info, .isa_success, .isa_warning, .isa_error {
+margin: 10px 0px;
+padding:12px;
+transition:0.5s;
+}
+.isa_info {
+    color: #00529B;
+    background-color: #BDE5F8;
+	border-radius:.5em;
+}
+.isa_success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+	border-radius:.5em;
+}
+.isa_warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+	border-radius:.5em;
+}
+.isa_error {
+    color: #D8000C;
+    background-color: #FFD2D2;	
+	border-radius:.5em;
+}
+.isa_info i, .isa_success i, .isa_warning i, .isa_error i {
+    margin:10px 22px;
+    font-size:2em;
+    vertical-align:middle;
+}
 .att-profile{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 360px;
