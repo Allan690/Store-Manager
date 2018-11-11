@@ -6,12 +6,9 @@ submitbtn.addEventListener('click', createSale);
 
 let qString = window.location.search;
 let product_id = parseInt(qString.replace(/\D/g,''), 10);
-console.log(product_id)
 function createSale(e){
 	e.preventDefault()
 	let quantity = parseInt(document.getElementById("prod_quantity").value, 10);
-	
-     console.log(quantity)
 	var data = 
 		{
 			prod_id:product_id,
