@@ -59,10 +59,10 @@ fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/products",{
 		}
 		else{
       let notify = document.getElementById("notify")
-	notify.innerHTML =`<div class="isa_error">
-   <i class="fa fa-times-circle"></i>
-   ${response.Message}
-</div>`
+	notify.innerHTML =`<div class="isa_info">
+                   <i class="fa fa-info-circle"></i>
+                ${response.Message}
+                         </div>`
 		}
 
 	})

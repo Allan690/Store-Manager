@@ -12,7 +12,7 @@ if (token === null){
     Please login to view this page
 </div>`
 }
-}
+
 
 //Getting our sale from the REST API
 fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/sales/${sale_id}`,{
@@ -62,6 +62,12 @@ mode: "cors",
 </table>
 	`
 	;
+	let notify = document.getElementById("notify")
+     notify.innerHTML =
+  `<div class="isa_success">
+    <i class="fa fa-check"></i>
+    Sale profile retrieved successfully!
+</div>`
 	
 	document.getElementById('body').innerHTML = output;
 	

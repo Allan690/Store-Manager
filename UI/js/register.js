@@ -47,25 +47,29 @@ fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/signup",{
                         <i class="fa fa-check"></i>
 						${response.Message}
                           </div>`
-			window.location.href = './index.html'
 		}
 		else{
       let notify = document.getElementById("notify")
-         notify.innerHTML =`<div class="isa_error">
-                       <i class="fa fa-times-circle"></i>
+         notify.innerHTML =`<div class="isa_info">
+                 <i class="fa fa-info-circle"></i>
                        ${response.Message}
-                        </div>`
+                             </div>`
 		}
 
 	})
 }
 
 function check_password() {
-    if (document.getElementById('psw').value ==
+    if (document.getElementById('psw').value ===
             document.getElementById('psw-repeat').value) {
         document.getElementById('btnsubmit').disabled = false;
     } else {
         document.getElementById('btnsubmit').disabled = true;
-        alert("Your passwords don't match")
+		let notify = document.getElementById("notify")
+         notify.innerHTML =`<div class="isa_info">
+                 <i class="fa fa-info-circle"></i>
+                      Your passwords do not match!
+                             </div>`
+        
     }
 }
