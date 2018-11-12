@@ -1,7 +1,6 @@
 function saleByID(){
-var searchbox = document.getElementById('searchbox');
-console.log(searchbox.value);
-sale_id = parseInt(searchbox.value, 10)
+let searchbox = document.getElementById('searchbox');
+let sale_id = parseInt(searchbox.value, 10)
 const token = localStorage.getItem('token')
 const access_token = "Bearer " + token
 if (token === null){
@@ -31,7 +30,7 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	let output = ''
+	let output = '';
 	output+=`
 	<table>
      <caption>User ID ${data["Sale Profile"].user_id} Sales Records</caption>

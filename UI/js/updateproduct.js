@@ -1,38 +1,38 @@
 // get update button and add event listener to it
-var updatebtn = document.getElementById("updatebtn")
+const updatebtn = document.getElementById("updatebtn");
 if(updatebtn){
 updatebtn.addEventListener('click', updateProduct)
 }
 //call back function
 function updateProduct(e){
-	e.preventDefault()
-  var prodid = parseInt(document.getElementById("prod_id").value, 10)
-  var name = document.getElementById("prod_name").value
-  var quantity = parseInt(document.getElementById("prod_quantity").value, 10)
-  var price = parseInt(document.getElementById("prod_price").value, 10)
-  var minimum = parseInt(document.getElementById("minimum_allowed").value, 10)
-  var description = document.getElementById("prod_description").value
-  var category = document.getElementById("prod_category").value
+	e.preventDefault();
+    const prodid = parseInt(document.getElementById("prod_id").value, 10);
+    const name = document.getElementById("prod_name").value;
+    const quantity = parseInt(document.getElementById("prod_quantity").value, 10);
+    const price = parseInt(document.getElementById("prod_price").value, 10);
+    const minimum = parseInt(document.getElementById("minimum_allowed").value, 10);
+    const description = document.getElementById("prod_description").value;
+    const category = document.getElementById("prod_category").value;
 
-var data = {
-	prod_id:prodid,
-	prod_name:name,
-	prod_category:category,
-    prod_price:price,
-    prod_quantity:quantity,
-    minimum_allowed:minimum,
-    prod_description:description
-};
+    const data = {
+        prod_id: prodid,
+        prod_name: name,
+        prod_category: category,
+        prod_price: price,
+        prod_quantity: quantity,
+        minimum_allowed: minimum,
+        prod_description: description
+    };
 
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
+    const token = localStorage.getItem('token');
+const access_token = "Bearer " + token;
 
 if (token === null){
 	let notify = document.getElementById("notify")
 	notify.innerHTML =`<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login with your admin credentials to proceed.
-</div>`
+</div>`;
 	window.location.href = "./login.html"
 }
 
@@ -51,16 +51,16 @@ fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/products/${prodid}`
 	.then(function(response){
 		if (response.Message === "Product successfully updated"){
 			// redirect to index page
-      let notify = document.getElementById("notify")
+      let notify = document.getElementById("notify");
 	notify.innerHTML =
 	`<div class="isa_success">
      <i class="fa fa-check"></i>
      Product updated successfully!
-</div>`
+</div>`;
 			window.location.href = './index.html'
 		}
 		else{
-      let notify = document.getElementById("notify")
+      let notify = document.getElementById("notify");
 	notify.innerHTML =`
 	<div class="isa_info">
     <i class="fa fa-info-circle"></i>
