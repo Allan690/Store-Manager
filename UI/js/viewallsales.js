@@ -1,7 +1,7 @@
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
+const token = localStorage.getItem('token');
+const access_token = "Bearer " + token;
 if (token === null){
-let notify = document.getElementById("notify")
+let notify = document.getElementById("notify");
 notify.innerHTML =`<div class="isa_success">
                     <i class="fa fa-check"></i>
 					Please login to view all sales
@@ -37,7 +37,7 @@ mode: "cors",
         </tr>
 	`
 	;
-	let notify = document.getElementById("notify")
+	let notify = document.getElementById("notify");
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
@@ -46,5 +46,5 @@ mode: "cors",
 	});
 	document.getElementById('tablebody').innerHTML = output;
 	
-})
+});
 

@@ -1,7 +1,7 @@
-const token1 = localStorage.getItem('token')
-const access_token1 = "Bearer " + token1
+const token1 = localStorage.getItem('token');
+const access_token1 = "Bearer " + token1;
 if (token1 === null){
-  let notify = document.getElementById("notify")
+  let notify = document.getElementById("notify");
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
@@ -26,7 +26,7 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	let output = ''
+	let output = '';
 	output+=
 	`
 <div class="att-profile">
@@ -38,14 +38,14 @@ mode: "cors",
 
 	`
 	;
-	let notify = document.getElementById("notify")
+	let notify = document.getElementById("notify");
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
   Attendant details displayed successfully!
-</div>`
+</div>`;
 	
 	document.getElementById('attdetails').innerHTML = output;
 	
-})
+});
 

@@ -1,7 +1,7 @@
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
+const token = localStorage.getItem('token');
+const access_token = "Bearer " + token;
 if (token === null){
-  let notify = document.getElementById("notify")
+  let notify = document.getElementById("notify");
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
@@ -27,7 +27,7 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	let output = ''
+	let output = '';
 	data["Users"].forEach(function(user){
 	output+=
 	`
@@ -45,7 +45,7 @@ mode: "cors",
 
 	`
 	;
-	let notify = document.getElementById("notify")
+	let notify = document.getElementById("notify");
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
@@ -54,5 +54,5 @@ mode: "cors",
 	});
 	document.getElementById('attdetails').innerHTML = output;
 	
-})
+});
 
