@@ -17,10 +17,6 @@ Store Manager is a web application that helps store owners manage sales and prod
 * Store attendants should be able to add products to specific categories.
 
 
-### NB
-This application should help store owners avoid selling products that have run out of stock.
-The store owner can be referred to as the admin of the application
-
 ## Running the application
 You can choose either of 2 options:
 1. Clone the repository by doing `git clone https://github.com/Allan690/Store-Manager.git` on the terminal
