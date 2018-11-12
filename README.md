@@ -23,10 +23,17 @@ The store owner can be referred to as the admin of the application
 
 ## Running the application
 You can choose either of 2 options:
-1. Clone the repository by doing `git clone https://github.com/Allan690/Store-Manager.git` with the use of a terminal
+1. Clone the repository by doing `git clone https://github.com/Allan690/Store-Manager.git` on the terminal
+  
+  OR
 
 2. Visit the hosting link: https://allan690.github.io/Store-Manager/UI/login.html
 
+3. Login with the admin credentials specified below(after either 1 or 2):
+- Default admin credentials: 
+  `email`: `allan@gmail.com`
+  `password`:`allangmailcompany`
+  
 ## Built With
 
 * [HTML](https://www.w3schools.com/html/html_intro.asp) - Structuring the web pages
