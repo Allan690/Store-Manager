@@ -26,9 +26,10 @@ function createSale(e){
     <i class="fa fa-info-circle"></i>
     Please login with your attendant credentials
 </div>`
+window.location.href = "./login.html"
 }
-	window.location.href = "./login.html"
-   }
+	
+   
 	fetch('https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/make-admin', {
 		method: "PUT",
 		headers: {
@@ -52,7 +53,7 @@ function createSale(e){
                                <i class="fa fa-check"></i>
 	                          ${response.Message}
                                  </div>`
-}
+
 			window.location.href = './attendantprofile.html'
 		}
 		else{
@@ -63,7 +64,7 @@ function createSale(e){
     ${response.Message}
 </div>`
 		}
-
+	
 	
 	})
 }
