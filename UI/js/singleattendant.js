@@ -1,6 +1,6 @@
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
-if (token === null){
+const token1 = localStorage.getItem('token')
+const access_token1 = "Bearer " + token1
+if (token1 === null){
   let notify = document.getElementById("notify")
   notify.innerHTML =
   `<div class="isa_info">
@@ -15,7 +15,7 @@ headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
 	'Access-Control-Request-Method': '*',
-	'Authorization': access_token
+	'Authorization': access_token1
 },
 method:"GET",
 mode: "cors",
