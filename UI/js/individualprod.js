@@ -1,13 +1,13 @@
-const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+let sect = document.getElementById('product')
+const token = localStorage.getItem('token')
+const access_token = "Bearer " + token
 if (token === null){
-  let notify = document.getElementById("notify");
+  let notify = document.getElementById("notify")
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login to view products page
-</div>`;
-	setTimeout('location.assign("./login.html")', 3000);
+</div>`
 }
 
 
@@ -29,7 +29,7 @@ mode: "cors",
 	})
 .then((data) => {
 	
-	let output = '<div></div>';
+	let output = '<div></div>'
 	data["All products"].forEach(function(product){
 	output+=`
 	<div class="prod-profile">
@@ -45,9 +45,9 @@ mode: "cors",
 	});
 	document.getElementById('product').innerHTML = output;
 	
-});
+})
 
-const searchbox = document.getElementById('searchbox');
+var searchbox = document.getElementById('searchbox')
 if(searchbox){
 	searchbox.addEventListener('search', getProductByID)
 }
@@ -55,10 +55,10 @@ if(searchbox){
 
 function getProductByID(){
 	
-const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const token = localStorage.getItem('token')
+const access_token = "Bearer " + token
 if (token === null){
-  let notify = document.getElementById("notify");
+  let notify = document.getElementById("notify")
 	notify.innerHTML =`<div class="isa_error">
    <i class="fa fa-times-circle"></i>
    Please login to view the products page!
@@ -82,7 +82,7 @@ mode: "cors",
 .then((data) => {
 	console.log(data);
 	console.log(typeof data);
-	let output = '<div></div>';
+	let output = '<div></div>'
 	output+=`
 	<div class="prod-profile">
     <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
@@ -101,12 +101,12 @@ mode: "cors",
     </div>
 	`
 	;
-	let notify = document.getElementById("notify");
+	let notify = document.getElementById("notify")
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
     Product retrieved successfully!
-</div>`;
+</div>`
 	product_id = data["Product Profile"].prod_id;
 	localStorage.setItem('product_id', product_id);
 	document.getElementById('product').innerHTML = output;

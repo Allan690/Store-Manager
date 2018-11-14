@@ -1,13 +1,12 @@
-const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const token = localStorage.getItem('token')
+const access_token = "Bearer " + token
 if (token === null){
-  let notify = document.getElementById("notify");
+  let notify = document.getElementById("notify")
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login as admin to view all sales
-</div>`;
-	setTimeout("location.assign('./login.html')", 3000);
+</div>`
 }
 
 //Getting our sales from the REST API
@@ -27,7 +26,7 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	let output = '';
+	let output = ''
 	data["All Sales"].forEach(function(sale){
 	output+=`
 	<table>
@@ -59,7 +58,7 @@ mode: "cors",
 </table>
 	`
 	;
-	let notify = document.getElementById("notify");
+	let notify = document.getElementById("notify")
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
@@ -68,5 +67,5 @@ mode: "cors",
 	});
 	document.getElementById('body').innerHTML = output;
 	
-});
+})
 

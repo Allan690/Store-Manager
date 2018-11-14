@@ -21,7 +21,7 @@ if (token === null){
     <i class="fa fa-info-circle"></i>
     Please login with your admin credentials
 </div>`;
-	setTimeout('location.assign("./login.html")', 3000);
+	window.location.href = "./login.html"
 }
 
 fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/signup",{

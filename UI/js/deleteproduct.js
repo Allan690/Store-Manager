@@ -1,15 +1,14 @@
 function deleteProductByID(){	
-const token = localStorage.getItem('token');
-const prodid = localStorage.getItem('product_id');
-const access_token = "Bearer " + token;
+const token = localStorage.getItem('token')
+const prodid = localStorage.getItem('product_id')
+const access_token = "Bearer " + token
 if (token === null){
-  let notify = document.getElementById("notify");
+  let notify = document.getElementById("notify")
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login as admin to delete a product!
-</div>`;
-	setTimeout("location.assign('./login.html')", 3000);
+</div>`
 }
 // ask the user whether they want to delete the product
 if(confirm("Are you sure you want to delete this product?"))
@@ -33,16 +32,16 @@ mode: "cors",
 .then(function(response){
 		if (response.Message === "Product deleted successfully!"){
 			// redirect to individualprod page
-      let notify = document.getElementById("notify");
+      let notify = document.getElementById("notify")
   notify.innerHTML =
   `<div class="isa_success">
      <i class="fa fa-check"></i>
      ${response.Message}
-</div>`;
-			window.location.assign('./individualprodetails.html')
+</div>`
+			window.location.href = './individualprodetails.html'
 		}
 		else{
-      let notify = document.getElementById("notify");
+      let notify = document.getElementById("notify")
      notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
@@ -55,7 +54,7 @@ mode: "cors",
 //continue displaying the current page
 else
 {
-	window.location.assign('./individualprodetails.html')
+	window.location.href = './individualprodetails.html'
 }
 
 }

@@ -12,7 +12,7 @@ if (token === null){
     <i class="fa fa-info-circle"></i>
     Please login with your admin credentials to proceed.
 </div>`;
-    setTimeout('location.assign("./login.html")', 3000)
+    window.location.href = "./login.html"
 }
 //call back function
 function addProduct(e){

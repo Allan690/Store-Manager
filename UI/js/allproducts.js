@@ -1,12 +1,12 @@
-const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+let sect = document.getElementById('product')
+const token = localStorage.getItem('token')
+const access_token = "Bearer " + token
 if (token === null){
-  let notify = document.getElementById("notify");
+  let notify = document.getElementById("notify")
 	notify.innerHTML =`<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login to view the products page.
-</div>`;
-	setTimeout("location.assign('./login.html')", 3000)
+</div>`
 }
 
 //Getting our products from the REST API
@@ -27,7 +27,7 @@ mode: "cors",
 	})
 .then((data) => {
 	
-	let output = '';
+	let output = ''
 	data["All products"].forEach(function(product){
 	output+=`
 	<form action="createsale.html">
@@ -43,7 +43,7 @@ mode: "cors",
 	<hr>
     <p class="description">Description: ${product.prod_description} </p>
 	<hr>
-    <button type="submit" id="btnSale"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+    <button type="submit" id="btnSale">Add to Cart</button>
     </div>	
 	</form>
 	`
@@ -51,11 +51,11 @@ mode: "cors",
 	
 	});
 	document.getElementById('product').innerHTML = output;
-	let notify = document.getElementById("notify");
+	let notify = document.getElementById("notify")
 	notify.innerHTML = `<div class="isa_success">
      <i class="fa fa-check"></i>
      Products retrieved successfully!
 </div>`
 	
-});
+})
 

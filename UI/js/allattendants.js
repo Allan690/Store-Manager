@@ -6,9 +6,10 @@ if (token === null){
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login as admin to view all attendants!
-</div>`;
-	setTimeout('location.assign("./login.html")', 3000);
+</div>`
 }
+
+
 //Getting attendant details from the rest api
 fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/users",{
 headers: {
