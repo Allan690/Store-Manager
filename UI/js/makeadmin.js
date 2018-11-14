@@ -1,32 +1,32 @@
 //add button click event listener to the submit button
-var submitbtn = document.getElementById("btnmakeadmin")
+const submitbtn = document.getElementById("btnmakeadmin");
 if(submitbtn){
 submitbtn.addEventListener('click', createSale);	
 } 
 let qString = window.location.search;
-var urlParams = new URLSearchParams(qString);
-var email = urlParams.get('attendant_email');
+const urlParams = new URLSearchParams(qString);
+const email = urlParams.get('attendant_email');
 //set textbox value to passed email
 document.getElementById("email").value = email;
 //call back function
 function createSale(e){
-	e.preventDefault()
-	var data = 
-		{
-			email:email
-		};
-	
-	
-	let token = localStorage.getItem("token");
+	e.preventDefault();
+    const data =
+        {
+            email: email
+        };
+
+
+    let token = localStorage.getItem("token");
 	access_token = "Bearer "+token;
 	if (token === null){
-  let notify = document.getElementById("notify")
+  let notify = document.getElementById("notify");
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login with your attendant credentials
-</div>`
-window.location.href = "./login.html"
+</div>`;
+setTimeout('location.assign("./login.html")', 3000)
 }
 	
    
@@ -47,17 +47,17 @@ window.location.href = "./login.html"
 		
 		if (response.Message === "Attendant made admin successfully!"){
 			// redirect to index page
-            let notify = document.getElementById("notify")
+            let notify = document.getElementById("notify");
             notify.innerHTML =
                              `<div class="isa_success">
                                <i class="fa fa-check"></i>
 	                          ${response.Message}
-                                 </div>`
+                                 </div>`;
 
-			window.location.href = './attendantprofile.html'
+			window.location.assign('./attendantprofile.html')
 		}
 		else{
-            let notify = document.getElementById("notify")
+            let notify = document.getElementById("notify");
      notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>

@@ -6,7 +6,8 @@ if (token1 === null){
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login to view this page.
-</div>`
+</div>`;
+	setTimeout('location.assign("./login.html")', 3000);
 }
 
 //Getting attendant details from the rest api

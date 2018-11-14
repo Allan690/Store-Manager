@@ -1,33 +1,30 @@
-var submitbtn = document.getElementById("btnSale")
+let token = localStorage.getItem("token");
+access_token = "Bearer "+token;
+if (token === null){
+    let notify = document.getElementById("notify");
+    notify.innerHTML =
+        `<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login as an attendant to make a sale
+</div>`;
+    setTimeout("location.assign('./login.html')", 3000);
+}
+const submitbtn = document.getElementById("btnSale");
 if(submitbtn){
-submitbtn.addEventListener('click', createSale);	
-} 
-
-
+    submitbtn.addEventListener('click', createSale);
+}
 let qString = window.location.search;
 let product_id = parseInt(qString.replace(/\D/g,''), 10);
 function createSale(e){
-	e.preventDefault()
+	e.preventDefault();
 	let quantity = parseInt(document.getElementById("prod_quantity").value, 10);
-	var data = 
-		{
-			prod_id:product_id,
-			quantity:quantity
-		};
-	
-	
-	let token = localStorage.getItem("token");
-	access_token = "Bearer "+token;
-	if (token === null){
-  let notify = document.getElementById("notify")
-  notify.innerHTML =
-  `<div class="isa_info">
-    <i class="fa fa-info-circle"></i>
-    Please login as an attendant to make a sale
-</div>`
-	window.location.href = "./login.html"
-   }
-	fetch('https://store-manager-api-app-v2.herokuapp.com/api/v2/sales', {
+    const data =
+        {
+            prod_id: product_id,
+            quantity: quantity
+        };
+
+    fetch('https://store-manager-api-app-v2.herokuapp.com/api/v2/sales', {
 		method: "POST",
 		headers: {
 		'Content-Type': 'application/json',
@@ -44,14 +41,16 @@ function createSale(e){
 		
 		if (response.Message === "Sale record created successfully!"){
 			// redirect to index page
+        let notify = document.getElementById("notify");
         notify.innerHTML =
                       `<div class="isa_success">
      <i class="fa fa-check"></i>
      ${response.Message}
-</div>`
+</div>`;
 			window.location.href = './index.html'
 		}
 		else{
+            let notify = document.getElementById("notify");
             notify.innerHTML =
                       `<div class="isa_info">
     <i class="fa fa-info-circle"></i>

@@ -1,14 +1,11 @@
 // get submit button and add event listener to it
 const submitbtn = document.getElementById("submit");
-console.log(submitbtn.value);
-
 if(submitbtn){
 submitbtn.addEventListener('click', loginFunction)
 }
 //call back function
 function loginFunction(e){
 	e.preventDefault();
-
     //  the data to post
     const data = {
         email: document.getElementById("email").value,
@@ -31,13 +28,11 @@ function loginFunction(e){
 		localStorage.setItem('token', response.token);
 		if (response.Message === "User logged in successfully!"){
 			// redirect to index page
-            console.log(response.Message);
             document.getElementById("notify").innerHTML =`<div class="isa_success">
                                <i class="fa fa-check"></i>
      ${response.Message}
-</div>`;
-            console.log(document.getElementById('notify').innerHTML);
-			window.location.assign('./index.html')
+    </div>`;
+        window.location.assign('./index.html')
 		}
 		else{
 			let notify = document.getElementById("notify");
@@ -45,8 +40,6 @@ function loginFunction(e){
                         <i class="fa fa-info-circle"></i>
                         ${response.Message}
                          </div>`
-
-
 		}
 
 	})

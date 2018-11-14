@@ -1,17 +1,17 @@
 function saleByID(){
 let searchbox = document.getElementById('searchbox');
-let sale_id = parseInt(searchbox.value, 10)
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
+let sale_id = parseInt(searchbox.value, 10);
+const token = localStorage.getItem('token');
+const access_token = "Bearer " + token;
 if (token === null){
-  let notify = document.getElementById("notify")
+  let notify = document.getElementById("notify");
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login to view this page
-</div>`
+</div>`;
+	setTimeout('location.assign("./login.html")', 3000);
 }
-
 
 //Getting our sale from the REST API
 fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/sales/${sale_id}`,{
@@ -61,12 +61,12 @@ mode: "cors",
 </table>
 	`
 	;
-	let notify = document.getElementById("notify")
+	let notify = document.getElementById("notify");
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
     Sale profile retrieved successfully!
-</div>`
+</div>`;
 	
 	document.getElementById('body').innerHTML = output;
 	
