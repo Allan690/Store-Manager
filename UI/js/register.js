@@ -1,29 +1,26 @@
 // get submit button and add event listener to it
-var submitbtn = document.getElementById("btnsubmit")
+const submitbtn = document.getElementById("btnsubmit");
 if(submitbtn){
 submitbtn.addEventListener('click', signUp)
 }
 //call back function
 function signUp(e){
-	e.preventDefault()
-
-	var email = document.getElementById("email").value
-	var password = document.getElementById("psw").value
-
-var data = {
-	email:email,
-	password:password
-};
-
-const token = localStorage.getItem('token')
-const access_token = "Bearer " + token
+	e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("psw").value;
+    const data = {
+        email: email,
+        password: password
+    };
+    const token = localStorage.getItem('token');
+const access_token = "Bearer " + token;
 
 if (token === null){
-  let notify = document.getElementById("notify")
+  let notify = document.getElementById("notify");
   notify.innerHTML =`<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login with your admin credentials
-</div>`
+</div>`;
 	window.location.href = "./login.html"
 }
 
@@ -42,14 +39,14 @@ fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/signup",{
 	.then(function(response){
 		if (response.Message === "Attendant user registered successfully"){
 			// redirect to index page
-         let notify = document.getElementById("notify")
+         let notify = document.getElementById("notify");
          notify.innerHTML =`<div class="isa_success">
                         <i class="fa fa-check"></i>
 						${response.Message}
                           </div>`
 		}
 		else{
-      let notify = document.getElementById("notify")
+      let notify = document.getElementById("notify");
          notify.innerHTML =`<div class="isa_info">
                  <i class="fa fa-info-circle"></i>
                        ${response.Message}
@@ -65,7 +62,7 @@ function check_password() {
         document.getElementById('btnsubmit').disabled = false;
     } else {
         document.getElementById('btnsubmit').disabled = true;
-		let notify = document.getElementById("notify")
+		let notify = document.getElementById("notify");
          notify.innerHTML =`<div class="isa_info">
                  <i class="fa fa-info-circle"></i>
                       Your passwords do not match!

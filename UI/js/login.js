@@ -1,21 +1,21 @@
 // get submit button and add event listener to it
-var submitbtn = document.getElementById("submit")
+const submitbtn = document.getElementById("submit");
+console.log(submitbtn.value);
+
 if(submitbtn){
 submitbtn.addEventListener('click', loginFunction)
 }
 //call back function
 function loginFunction(e){
-	e.preventDefault()
-	var email = document.getElementById("email").value
-	var password = document.getElementById("password").value
+	e.preventDefault();
 
-	//  the data to post
-	var data = {
-	email:email,
-	password:password,
-	};
+    //  the data to post
+    const data = {
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+    };
 
-	//  post the data to db via fetch
+    //  post the data to db via fetch
 	fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/login",{
 	headers: {
 		'Content-Type': 'application/json',
@@ -28,18 +28,19 @@ function loginFunction(e){
 
 	}).then(function(response){return response.json()})
 	.then(function(response){
-		localStorage.setItem('token', response.token)
+		localStorage.setItem('token', response.token);
 		if (response.Message === "User logged in successfully!"){
 			// redirect to index page
-			let notify = document.getElementById("notify")
-			notify.innerHTML =`<div class="isa_success">
+            console.log(response.Message);
+            document.getElementById("notify").innerHTML =`<div class="isa_success">
                                <i class="fa fa-check"></i>
-     You were successfully logged in!
-</div>`
-			window.location.href = './index.html'
+     ${response.Message}
+</div>`;
+            console.log(document.getElementById('notify').innerHTML);
+			window.location.assign('./index.html')
 		}
 		else{
-			let notify = document.getElementById("notify")
+			let notify = document.getElementById("notify");
 			notify.innerHTML =`<div class="isa_info">
                         <i class="fa fa-info-circle"></i>
                         ${response.Message}
