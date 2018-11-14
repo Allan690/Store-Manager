@@ -1,4 +1,13 @@
 // get update button and add event listener to it
+if (token === null){
+    let notify = document.getElementById("notify");
+    notify.innerHTML =`<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Please login with your admin credentials to proceed.
+</div>`;
+   setTimeout("location.assign('./login.html')", 3000);
+}
+
 const updatebtn = document.getElementById("updatebtn");
 if(updatebtn){
 updatebtn.addEventListener('click', updateProduct)
@@ -23,18 +32,8 @@ function updateProduct(e){
         minimum_allowed: minimum,
         prod_description: description
     };
-
     const token = localStorage.getItem('token');
 const access_token = "Bearer " + token;
-
-if (token === null){
-	let notify = document.getElementById("notify")
-	notify.innerHTML =`<div class="isa_info">
-    <i class="fa fa-info-circle"></i>
-    Please login with your admin credentials to proceed.
-</div>`;
-	window.location.href = "./login.html"
-}
 
 fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/products/${prodid}`,{
 	headers:{

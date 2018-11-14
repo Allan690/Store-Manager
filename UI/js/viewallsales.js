@@ -5,7 +5,8 @@ let notify = document.getElementById("notify");
 notify.innerHTML =`<div class="isa_success">
                     <i class="fa fa-check"></i>
 					Please login to view all sales
-					</div>`
+					</div>`;
+	setTimeout("location.assign('./login.html')", 3000);
 }
 
 //Getting our sales from the REST API
@@ -25,7 +26,7 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	let output = ''
+	let output = '';
 	data["Sale records"].forEach(function(sale){
 	output+=`
 	    <tr>

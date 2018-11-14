@@ -6,8 +6,8 @@ describe('login',() => {
         document.body.innerHTML +=`
         <div id="notify"></div>
         <form id="login">
-          <input type="email" id="email" value="allan@gmail.com">
-          <input type="password"  id="password" value ="allangmailcompany">
+          <input type="email" id="email" value="test@gmail.com">
+          <input type="password"  id="password" value ="testing1234">
           <input type="submit" id="submit">
         </form>`;
         fetchMock = jest.spyOn(global, 'fetch');
@@ -37,11 +37,12 @@ describe('login',() => {
                 'Access-Control-Request-Method': '*'
             },
             body: JSON.stringify({
-                email: 'allan@gmail.com',
-                password: "allangmailcompany"
+                email: 'test@gmail.com',
+                password: "testing1234"
             })
 
         });
+        expect.assertions(1);
         await Promise.resolve().then();
         expect(document.getElementById('notify').innerHTML).toBe(
             `<div class="isa_success">
@@ -54,7 +55,7 @@ describe('login',() => {
     it('Login with wrong email/password', async () =>{
         fetchMock = jest.spyOn(global,'fetch');
         fetchMock.mockImplementation(() =>Promise.resolve ({
-            json: () => Promise.resolve({message:"User not found!"})
+            json: () => Promise.resolve({Message:"User not found!"})
         }));
         document.getElementById('submit').click();
         expect(fetchMock).toHaveBeenCalledTimes(1);
