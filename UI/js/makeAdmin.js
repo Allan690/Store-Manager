@@ -54,7 +54,7 @@ setTimeout('location.assign("./login.html")', 3000)
 	                          ${response.Message}
                                  </div>`;
 
-			window.location.assign('../html/attendantprofile.html')
+			window.location.assign('../HTML/attendantprofile.html')
 		}
 		else{
             let notify = document.getElementById("notify");
