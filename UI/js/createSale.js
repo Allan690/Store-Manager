@@ -1,5 +1,5 @@
 let token = localStorage.getItem("token");
-access_token = "Bearer "+token;
+accessToken = "Bearer "+token;
 if (token === null){
     let notify = document.getElementById("notify");
     notify.innerHTML =
@@ -7,7 +7,7 @@ if (token === null){
     <i class="fa fa-info-circle"></i>
     Please login as an attendant to make a sale
 </div>`;
-    setTimeout("location.assign('./login.html')", 3000);
+    setTimeout("location.assign('../HTML/login.html')", 3000);
 }
 const submitbtn = document.getElementById("btnSale");
 if(submitbtn){
@@ -30,7 +30,7 @@ function createSale(e){
 		'Content-Type': 'application/json',
 	    'Access-Control-Allow-Origin':'*',
 	    'Access-Control-Request-Method': '*',
-	    'Authorization': access_token
+	    'Authorization': accessToken
 		},
 		    
 	mode:"cors",
@@ -47,7 +47,7 @@ function createSale(e){
      <i class="fa fa-check"></i>
      ${response.Message}
 </div>`;
-			window.location.href = './index.html'
+			location.assign('../HTML/index.html')
 		}
 		else{
             let notify = document.getElementById("notify");

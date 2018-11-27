@@ -1,7 +1,7 @@
 //add button click event listener to the submit button
-const submitbtn = document.getElementById("btnmakeadmin");
-if(submitbtn){
-submitbtn.addEventListener('click', createSale);	
+const submitBtn = document.getElementById("btnmakeadmin");
+if(submitBtn){
+submitBtn.addEventListener('click', createSale);
 } 
 let qString = window.location.search;
 const urlParams = new URLSearchParams(qString);
@@ -18,7 +18,7 @@ function createSale(e){
 
 
     let token = localStorage.getItem("token");
-	access_token = "Bearer "+token;
+	accessToken = "Bearer "+token;
 	if (token === null){
   let notify = document.getElementById("notify");
   notify.innerHTML =
@@ -36,7 +36,7 @@ setTimeout('location.assign("./login.html")', 3000)
 		'Content-Type': 'application/json',
 	    'Access-Control-Allow-Origin':'*',
 	    'Access-Control-Request-Method': '*',
-	    'Authorization': access_token
+	    'Authorization': accessToken
 		},
 		    
 	mode:"cors",
@@ -54,7 +54,7 @@ setTimeout('location.assign("./login.html")', 3000)
 	                          ${response.Message}
                                  </div>`;
 
-			window.location.assign('./attendantprofile.html')
+			window.location.assign('../html/attendantprofile.html')
 		}
 		else{
             let notify = document.getElementById("notify");

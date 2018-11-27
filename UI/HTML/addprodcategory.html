@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/registration.css">
+<link rel="stylesheet" type="text/css" href="../css/registration.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 <title>Update Product Details</title>
 </head>
 <body>
@@ -23,9 +23,11 @@
    <ul class="navbar-nav">
     <li><a href="index.html"><i class="fa fa-fw fa-home"></i>
       All Products</a></li>
-    <li><a href="allsalerecords.html"><i class="fa fa-shopping-cart"></i> Sales Records</a></li>
-    <li><a href="attendantprofile.html"><i class="fa fa-user"></i> View Profile</a></li>
+    <li><a href="allsalerecords.html"><i class="fa fa-shopping-cart"></i> View Sales</a></li>
+    <li><a href="attendantprofile.html"><i class="fa fa-user"></i> View Users</a></li>
     <li><a href="crudproduct.html"><i class="fa fa-plus"></i> Create Product</a></li>
+     <li> <a href="addprodcategory.html"><i class="fa fa-edit"></i> Update Product</a></li>
+    <li><a href="register.html"><i class="fa fa-user-plus"></i> Add Attendant</a></li>
     <li><a href="individualprodetails.html"><i class="fa fa-info-circle"></i> Product Information</a></li>
     <li><a href="login.html" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
   </ul>
@@ -45,31 +47,31 @@
     <h1>Update Product details</h1>
     <p>Fill this form to update the product details</p>
     <hr>
-	<label for="prodid"><b>Product ID</b></label>
+	<label for="prod_id"><b>Product ID</b></label>
     <input type="text" id="prod_id" placeholder="Product ID of the product you want to change" name="prodid" required>
 	
-    <label for="prodname"><b>Product Name</b></label>
+    <label for="prod_name"><b>Product Name</b></label>
     <input type="text" id="prod_name" placeholder="Enter the new product name" name="prodname" required>
 
-    <label for="prodquantity" ><b>Product Quantity</b></label>
+    <label for="prod_quantity" ><b>Product Quantity</b></label>
     <input type="text" id="prod_quantity" placeholder="Enter the new product quantity" name="prodqty" required>
 
-    <label for="prodmin" ><b>Minimum allowed quantity</b></label>
+    <label for="minimum_allowed" ><b>Minimum allowed quantity</b></label>
     <input type="text" id="minimum_allowed" placeholder="Enter the new minimum allowed quantity " name="prodminqty" required>
 
-    <label for="prodcategory" ><b>Product Category</b></label>
+    <label for="prod_category" ><b>Product Category</b></label>
     <input type="text" id="prod_category" placeholder="Enter the new product category" name="prodcategory" required>
 
-    <label for="price" ><b>Product Price</b></label>
+    <label for="prod_price" ><b>Product Price</b></label>
     <input type="number" id="prod_price" placeholder="Enter the new product price" name="prodprice" required>
 
-    <label for="description" ><b>Product description</b></label>
+    <label for="prod_description" ><b>Product description</b></label>
     <input type="text" id="prod_description" placeholder="Enter the new product description" name="prod_description" required>
     <hr>
     <button type="submit" class="registerbtn" id="updatebtn" >Update Product</button>
   </div>
-  <script src="js/updateproduct.js"></script>
-  <script src="js/logout.js"></script>
+  <script src="../js/updateProduct.js"></script>
+  <script src="../js/logout.js"></script>
 </form>
 
 </body>

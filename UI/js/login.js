@@ -1,7 +1,7 @@
 // get submit button and add event listener to it
-const submitbtn = document.getElementById("submit");
-if(submitbtn){
-submitbtn.addEventListener('click', loginFunction)
+const submitBtn = document.getElementById("submit");
+if(submitBtn){
+submitBtn.addEventListener('click', loginFunction)
 }
 //call back function
 function loginFunction(e){
@@ -32,7 +32,7 @@ function loginFunction(e){
                                <i class="fa fa-check"></i>
      ${response.Message}
     </div>`;
-        window.location.assign('./index.html')
+        window.location.assign('../HTML/index.html')
 		}
 		else{
 			let notify = document.getElementById("notify");

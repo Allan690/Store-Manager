@@ -1,5 +1,5 @@
 const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const accessToken = "Bearer " + token;
 if (token === null){
   let notify = document.getElementById("notify");
   notify.innerHTML =
@@ -7,7 +7,7 @@ if (token === null){
     <i class="fa fa-info-circle"></i>
     Please login to view products page
 </div>`;
-	setTimeout('location.assign("./login.html")', 3000);
+	setTimeout('location.assign("../HTML/login.html")', 3000);
 }
 
 
@@ -17,7 +17,7 @@ headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
 	'Access-Control-Request-Method': '*',
-	'Authorization': access_token
+	'Authorization': accessToken
 },
 method:"GET",
 mode: "cors",
@@ -33,7 +33,7 @@ mode: "cors",
 	data["All products"].forEach(function(product){
 	output+=`
 	<div class="prod-profile">
-    <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
+    <img src="../images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
 	<p class="prod_id" id="prod_id">Product ID: ${product.prod_id} </p>
 	<p>Quantity: ${product.prod_quantity} </p>
@@ -80,12 +80,10 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	console.log(data);
-	console.log(typeof data);
 	let output = '<div></div>';
 	output+=`
 	<div class="prod-profile">
-    <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
+    <img src="../images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${data["Product Profile"].prod_name}</h1><hr>
 	<p id="prod_id"> Product ID: ${data["Product Profile"].prod_id}</p> <hr>
     <p class="price">Price: ${data["Product Profile"].prod_price}</p><hr>

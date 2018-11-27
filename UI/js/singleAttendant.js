@@ -1,21 +1,22 @@
-const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
-if (token === null){
+const token1 = localStorage.getItem('token');
+const access_token1 = "Bearer " + token1;
+if (token1 === null){
   let notify = document.getElementById("notify");
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
-    Please login as admin to view all attendants!
+    Please login to view this page.
 </div>`;
-	setTimeout('location.assign("./login.html")', 3000);
+	setTimeout('location.assign("./HTML/login.html")', 3000);
 }
+
 //Getting attendant details from the rest api
 fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/users",{
 headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
 	'Access-Control-Request-Method': '*',
-	'Authorization': access_token
+	'Authorization': access_token1
 },
 method:"GET",
 mode: "cors",
@@ -27,20 +28,14 @@ mode: "cors",
 	})
 .then((data) => {
 	let output = '';
-	data["Users"].forEach(function(user){
 	output+=
 	`
-<form action="makeadmin.html">
-<div class="card">
-<img src="images/avatar-homme.png" alt="attendant image" style="width:100%">
+<div class="att-profile">
+<img src="../images/avatar-homme.png" alt="attendant image" style="width:100%">
 <hr>
-<input type="hidden" name="attendant_email" id="attendant_email" value=${user.email}>
-<p>Attendant ID: ${user.user_id} </p><hr>
-<p>Attendant Email: ${user.email} </p><hr>
-<p> Role: ${user.role} </p><hr>
-<p><button type="submit">Make Admin</button></p>
+<p>Attendant ID: ${data["User Profile"].user_id} </p><hr>
+<p>Attendant Email: ${data["User Profile"].email} </p><hr>
 </div>
-</form>
 
 	`
 	;
@@ -48,9 +43,9 @@ mode: "cors",
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
-    Users retrieved successfully!
-</div>`
-	});
+  Attendant details displayed successfully!
+</div>`;
+	
 	document.getElementById('attdetails').innerHTML = output;
 	
 });
