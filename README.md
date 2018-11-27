@@ -21,7 +21,7 @@ You can choose either of 2 options:
   
   OR
 
-2. Visit the hosting link: https://allan690.github.io/Store-Manager/UI/login.html
+2. Visit the hosting link: https://allan690.github.io/Store-Manager/UI/HTML/login.html
 
 3. Login with the admin credentials specified below(after either 1 or 2):
 - Default admin credentials: 
