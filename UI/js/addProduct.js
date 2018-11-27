@@ -1,21 +1,23 @@
-// get update button and add event listener to it
+// get submit button and add event listener to it
+let submitBtn = document.getElementById("addprod");
+if(submitBtn){
+submitBtn.addEventListener('click', addProduct)
+}
+const token = localStorage.getItem('token');
+const accessToken = "Bearer " + token;
+
 if (token === null){
     let notify = document.getElementById("notify");
     notify.innerHTML =`<div class="isa_info">
     <i class="fa fa-info-circle"></i>
     Please login with your admin credentials to proceed.
 </div>`;
-   setTimeout("location.assign('./login.html')", 3000);
-}
-
-const updatebtn = document.getElementById("updatebtn");
-if(updatebtn){
-updatebtn.addEventListener('click', updateProduct)
+    setTimeout('location.assign("../HTML/login.html")', 3000)
 }
 //call back function
-function updateProduct(e){
+function addProduct(e){
 	e.preventDefault();
-    const prodid = parseInt(document.getElementById("prod_id").value, 10);
+
     const name = document.getElementById("prod_name").value;
     const quantity = parseInt(document.getElementById("prod_quantity").value, 10);
     const price = parseInt(document.getElementById("prod_price").value, 10);
@@ -24,47 +26,42 @@ function updateProduct(e){
     const category = document.getElementById("prod_category").value;
 
     const data = {
-        prod_id: prodid,
-        prod_name: name,
-        prod_category: category,
-        prod_price: price,
-        prod_quantity: quantity,
-        minimum_allowed: minimum,
-        prod_description: description
-    };
-    const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+	prod_name:name,
+	prod_category:category,
+    prod_price:price,
+    prod_quantity:quantity,
+    minimum_allowed:minimum,
+    prod_description:description
+};
 
-fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/products/${prodid}`,{
+fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/products",{
 	headers:{
 		"Content-type":"application/json",
 		'Access-Control-Allow-Origin':'*',
 		'Access-Control-Request-Method': '*',
-		"Authorization": access_token
+		"Authorization": accessToken
 	},
-	method:"PUT",
+	method:"POST",
 	mode:"cors",
 	body: JSON.stringify(data)
 
 	}).then(function(response){return response.json()})
 	.then(function(response){
-		if (response.Message === "Product successfully updated"){
+		if (response.Message === "Product registered successfully"){
 			// redirect to index page
       let notify = document.getElementById("notify");
-	notify.innerHTML =
-	`<div class="isa_success">
+	notify.innerHTML =`<div class="isa_success">
      <i class="fa fa-check"></i>
-     Product updated successfully!
-</div>`;
-			window.location.href = './index.html'
+     ${response.Message}
+       </div>`;
+			window.location.assign('../HTML/index.html')
 		}
 		else{
       let notify = document.getElementById("notify");
-	notify.innerHTML =`
-	<div class="isa_info">
-    <i class="fa fa-info-circle"></i>
-    ${response.Message}
-</div>`
+	notify.innerHTML =`<div class="isa_info">
+                   <i class="fa fa-info-circle"></i>
+                ${response.Message}
+                         </div>`
 		}
 
 	})

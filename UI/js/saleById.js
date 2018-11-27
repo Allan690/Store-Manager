@@ -1,3 +1,6 @@
+function saleById(){
+let searchBox = document.getElementById('searchbox');
+let sale_id = parseInt(searchBox.value, 10);
 const token = localStorage.getItem('token');
 const access_token = "Bearer " + token;
 if (token === null){
@@ -5,13 +8,13 @@ if (token === null){
   notify.innerHTML =
   `<div class="isa_info">
     <i class="fa fa-info-circle"></i>
-    Please login as admin to view all sales
+    Please login to view this page
 </div>`;
-	setTimeout("location.assign('./login.html')", 3000);
+	setTimeout('location.assign("../HTML/login.html")', 3000);
 }
 
-//Getting our sales from the REST API
-fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/sales",{
+//Getting our sale from the REST API
+fetch(`https://store-manager-api-app-v2.herokuapp.com/api/v2/sales/${sale_id}`,{
 headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
@@ -28,10 +31,9 @@ mode: "cors",
 	})
 .then((data) => {
 	let output = '';
-	data["All Sales"].forEach(function(sale){
 	output+=`
 	<table>
-     <caption>User ID: ${sale.user_id} Sales Records</caption>
+     <caption>User ID ${data["Sale Profile"].user_id} Sales Records</caption>
       <thead>
         <tr>
           <th scope="col">Product ID</th>
@@ -43,16 +45,16 @@ mode: "cors",
       </thead>
       <tfoot>
         <tr>
-          <td colspan="5">attendantID: ${sale.user_id}</td>
+          <td colspan="5">attendantID: ${data["Sale Profile"].user_id}</td>
         </tr>
       </tfoot>
       <tbody>
         <tr>
-          <th scope="row">${sale.product_id}</th>
-          <td>${sale.sales_id}</td>
-          <td>${sale.sales_quantity}</td>
-          <td>${sale.prod_price}</td>
-          <td>${sale.user_id}</td>
+          <th scope="row">${data["Sale Profile"].product_id}</th>
+          <td>${data["Sale Profile"].sales_id}</td>
+          <td>${data["Sale Profile"].sales_quantity}</td>
+          <td>${data["Sale Profile"].prod_price}</td>
+          <td>${data["Sale Profile"].user_id}</td>
         </tr>        
           
       </tbody>
@@ -63,10 +65,10 @@ mode: "cors",
      notify.innerHTML =
   `<div class="isa_success">
     <i class="fa fa-check"></i>
-    All sales retrieved successfully!
-</div>`
-	});
+    Sale profile retrieved successfully!
+</div>`;
+	
 	document.getElementById('body').innerHTML = output;
 	
-});
-
+})
+}

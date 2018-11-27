@@ -1,5 +1,5 @@
 const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const accessToken = "Bearer " + token;
 if (token === null){
   let notify = document.getElementById("notify");
 	notify.innerHTML =`<div class="isa_info">
@@ -15,7 +15,7 @@ headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
 	'Access-Control-Request-Method': '*',
-	'Authorization': access_token
+	'Authorization': accessToken
 },
 method:"GET",
 mode: "cors",
@@ -32,7 +32,7 @@ mode: "cors",
 	output+=`
 	<form action="createsale.html">
 	<div class="card">
-    <img src="images/mystoresbg.jpg" alt="Store logo" style="width:100%">
+    <img src="../images/mystoresbg.jpg" alt="Store logo" style="width:100%">
     <h1>${product.prod_name}</h1>
 	<p id="productid"> Product ID: ${product.prod_id} </p>
 	<hr>

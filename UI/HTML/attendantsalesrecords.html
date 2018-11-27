@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Sale records</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="../js/main.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -20,12 +20,14 @@
               <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
           </svg>
         </a>
-       </span>  <ul class="navbar-nav">
+      </span>  <ul class="navbar-nav">
         <li><a href="index.html"><i class="fa fa-fw fa-home"></i>
             All Products</a></li>
-        <li><a href="allsalerecords.html"><i class="fa fa-shopping-cart"></i> Sales Records</a></li>
-        <li><a href="attendantprofile.html"><i class="fa fa-user"></i> View Profile</a></li>
+        <li><a href="allsalerecords.html"><i class="fa fa-shopping-cart"></i> View Sales</a></li>
+        <li><a href="attendantprofile.html"><i class="fa fa-user"></i> View Users</a></li>
         <li><a href="crudproduct.html"><i class="fa fa-plus"></i> Create Product</a></li>
+        <li> <a href="addprodcategory.html"><i class="fa fa-edit"></i> Update Product</a></li>
+        <li><a href="register.html"><i class="fa fa-user-plus"></i> Add Attendant</a></li>
         <li><a href="individualprodetails.html"><i class="fa fa-info-circle"></i> Product Information</a></li>
         <li><a href="login.html" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
     </ul>
@@ -38,16 +40,31 @@
         <a href="attendantsalesrecords.html"><i class="fa fa-shopping-cart"></i> View Sales</a><br>
         <a href="login.html" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a>
     </div>
-	<div id="notify">
+<div id="notify">
 </div>
-     <div id="main">
-	<input type="search" id="searchbox" placeholder="Enter the sales id..." onsearch="saleByID()">
-	</div>
- <div id="body">
-</div> 
+    <table>
 	
-  </body>  
-  <script src= "js/allsales-admin.js"> </script>  
-  <script src= "js/salebyid.js"> </script>
-  <script src="js/logout.js"></script>
+      <caption>Attendant Sale Records</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product ID</th>
+		  <th scope="col">Sales ID</th>
+          <th scope="col">Sold Quantity</th>
+          <th scope="col">Product Price</th>
+		  <th scope="col">User ID</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="5">Individual Sale Record.</td>
+        </tr>
+      </tfoot>
+      <tbody id= "tablebody">
+         
+      </tbody>
+    </table>
+  </body>
+   <script src="../js/viewAllSales.js"></script>
+  <script src="../js/allSalesAdmin.js"></script>
+   <script src="../js/logout.js"></script>
 </html>

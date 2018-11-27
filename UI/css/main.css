@@ -339,9 +339,6 @@ flex-basis: 25%
 	height: 40px;
 	
 }
-@media(max-width:568px){
-  .navbar-nav{display:none}
-}
 
 @media(min-width:568px){
   /*.open-slide{display:none}*/
@@ -363,4 +360,15 @@ flex-basis: 25%
   .sort {
     align-self: flex-start;
   }
+}
+@media screen and (max-width: 500px) {
+    .navbar-nav a {
+        float: none;
+        display: flex;
+    }
+
+    .navbar-nav {
+        float: none;
+        display: flex;
+    }
 }

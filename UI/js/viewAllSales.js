@@ -1,12 +1,12 @@
 const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const accessToken = "Bearer " + token;
 if (token === null){
 let notify = document.getElementById("notify");
 notify.innerHTML =`<div class="isa_success">
                     <i class="fa fa-check"></i>
 					Please login to view all sales
 					</div>`;
-	setTimeout("location.assign('./login.html')", 3000);
+	setTimeout("location.assign('../HTML/login.html')", 3000);
 }
 
 //Getting our sales from the REST API
@@ -15,7 +15,7 @@ headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
 	'Access-Control-Request-Method': '*',
-	'Authorization': access_token
+	'Authorization': accessToken
 },
 method:"GET",
 mode: "cors",

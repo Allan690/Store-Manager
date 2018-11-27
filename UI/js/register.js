@@ -1,7 +1,7 @@
 // get submit button and add event listener to it
-const submitbtn = document.getElementById("btnsubmit");
-if(submitbtn){
-submitbtn.addEventListener('click', signUp)
+const submitBtn = document.getElementById("btnsubmit");
+if(submitBtn){
+submitBtn.addEventListener('click', signUp)
 }
 //call back function
 function signUp(e){
@@ -13,7 +13,7 @@ function signUp(e){
         password: password
     };
     const token = localStorage.getItem('token');
-const access_token = "Bearer " + token;
+const accessToken = "Bearer " + token;
 
 if (token === null){
   let notify = document.getElementById("notify");
@@ -29,7 +29,7 @@ fetch("https://store-manager-api-app-v2.herokuapp.com/api/v2/auth/signup",{
 		"Content-type":"application/json",
 		'Access-Control-Allow-Origin':'*',
 		'Access-Control-Request-Method': '*',
-		"Authorization": access_token
+		"Authorization": accessToken
 	},
 	method:"POST",
 	mode:"cors",
