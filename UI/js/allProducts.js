@@ -26,7 +26,14 @@ mode: "cors",
 	
 	})
 .then((data) => {
-	
+	console.log(data.Message);
+	if (data.Message === "Products not found!"){
+        let notify = document.getElementById("notify");
+        notify.innerHTML =`<div class="isa_info">
+    <i class="fa fa-info-circle"></i>
+    Be calm. You got not products. But when you create 'em, they'll appear here :-)
+</div>`
+    }
 	let output = '';
 	data["All products"].forEach(function(product){
 	output+=`
