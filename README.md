@@ -25,8 +25,10 @@ You can choose either of 2 options:
 
 3. Login with the admin credentials specified below(after either 1 or 2):
 - Default admin credentials: 
-  `email`: `allan@gmail.com`
-  `password`:`allangmailcompany`
+```
+  email: allan@gmail.com
+  password:allangmailcompany
+  ```
   
 ## Login page 
  ![image](https://user-images.githubusercontent.com/23090268/48373814-f5bb9780-e6d3-11e8-9de2-cfdc034ca10b.png)
