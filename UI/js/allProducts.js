@@ -1,5 +1,6 @@
 const token = localStorage.getItem('token');
 const accessToken = "Bearer " + token;
+console.log(accessToken);
 if (token === null){
   let notify = document.getElementById("notify");
 	notify.innerHTML =`<div class="isa_info">

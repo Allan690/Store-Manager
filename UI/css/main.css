@@ -76,15 +76,7 @@ body{
   width:100%;
 }
 
-#searchbox{
-	float: right;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-	
-}
+
 .product-filter {
   display: flex;
 }
@@ -255,6 +247,26 @@ flex-basis: 25%
 
 .card button:hover {
   opacity: 0.7;
+}
+#searchbox{
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 20px;
+    font-size: 17px;
+
+}
+.searchBtn{
+    float: right;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+}
+.searchBtn:hover{
+    background-color: #ddd;
 }
 /* Style the buttons */
 .btn {
