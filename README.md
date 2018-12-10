@@ -32,6 +32,9 @@ You can choose either of 2 options:
   
 ## Login page 
  ![image](https://user-images.githubusercontent.com/23090268/48373814-f5bb9780-e6d3-11e8-9de2-cfdc034ca10b.png)
+ 
+## Running tests
+To run tests do: `npm test`
   
 ## Built With
 
